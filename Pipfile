@@ -5,8 +5,15 @@ name = "pypi"
 
 [packages]
 flask = "*"
+flask-cors = "*"
+flask-sqlalchemy = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.10"
+
+[scripts]
+dev = "flask run -p ${PORT}"
+init_db = "python init_db.py"
