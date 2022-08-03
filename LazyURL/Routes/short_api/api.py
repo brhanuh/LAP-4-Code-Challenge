@@ -20,7 +20,7 @@ def api_shorten(long_url):
     headers = {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Authorization": api_key
+        "Authorization": "sk_E4vkZyGkYUzNHxe5"
     }
 
     response = requests.post(url, json=payload, headers=headers)
