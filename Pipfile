@@ -11,6 +11,7 @@ python-dotenv = "*"
 werkzeug = "*"
 requests = "*"
 gunicorn = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
