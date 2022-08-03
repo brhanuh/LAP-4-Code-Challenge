@@ -10,6 +10,7 @@ flask-sqlalchemy = "*"
 python-dotenv = "*"
 werkzeug = "*"
 requests = "*"
+gunicorn = "*"
 
 [dev-packages]
 
@@ -19,3 +20,4 @@ python_version = "3.10"
 [scripts]
 dev = "flask run -p ${PORT}"
 init_db = "python init_db.py"
+start = "gunicorn LazyURL:app"
