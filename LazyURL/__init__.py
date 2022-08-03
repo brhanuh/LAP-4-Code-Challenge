@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 from .Database.db import db
 from os import environ
 from werkzeug import exceptions
-
 from .Routes.main import lazy_index
+
 load_dotenv()
 database_uri = environ.get('DATABASE_URL')
 
@@ -23,7 +23,6 @@ CORS(app)
 
 db.app = app
 db.init_app(app)
-
 
 app.register_blueprint(lazy_index)
 
