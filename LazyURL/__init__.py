@@ -9,6 +9,9 @@ from .Routes.main import lazy_index
 load_dotenv()
 database_uri = environ.get('DATABASE_URL')
 
+if 'postgres:' in database_uri:
+    database_uri = database_uri.replace("postgres:", "postgresql:")
+
 app = Flask(__name__)
 
 app.config.update(
