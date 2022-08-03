@@ -23,3 +23,30 @@
   "unicodeHostname": "lazy.com",
   "clientStorage": null
 }
+
+#Heroku
+{
+  "linkType": "random",
+  "state": "not_configured",
+  "hideVisitorIp": false,
+  "caseSensitive": false,
+  "exportEnabled": false,
+  "cloaking": false,
+  "incrementCounter": "A",
+  "setupType": "dns",
+  "supportDeprecatedLinkId": false,
+  "httpsLevel": "none",
+  "robots": "allow",
+  "purgeExpiredLinks": false,
+  "lastPurgeDate": null,
+  "id": 449461,
+  "hostname": "fp-lazyurl.herokuapp.com",
+  "UserId": 489927,
+  "hideReferer": false,
+  "httpsLinks": false,
+  "updatedAt": "2022-08-03T11:00:00.657Z",
+  "createdAt": "2022-08-03T11:00:00.582Z",
+  "provider": null,
+  "unicodeHostname": "fp-lazyurl.herokuapp.com",
+  "clientStorage": null
+}

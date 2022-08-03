@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, redirect, render_template, request
 from .short_api.api import api_shorten
-
+from ..Database.db import db
+from ..Models.lazy import LazyUrl
 lazy_index = Blueprint("main", __name__)
 
 @lazy_index.route("/", methods=['GET', 'POST'])
@@ -8,7 +9,17 @@ def welcome():
     if request.method == 'POST':
         print(request.form['url'])
         long_url = request.form['url']
-        api_shorten(long_url)
+        short_url = api_shorten(long_url)
+        new_url = LazyUrl(original_url=long_url, short_url=short_url)
+        db.session.add(new_url)
+        db.session.commit()
     else:
         print("else post")
     return render_template("index.html")
+
+@lazy_index.route("/<short>", methods=['GET'])
+def handle_url(short):
+    print(short)
+    url = LazyUrl.query.filter_by(short_url=short).first()
+    original_url = url.original_url
+    return redirect(original_url)
