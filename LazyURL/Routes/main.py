@@ -13,8 +13,6 @@ def welcome():
         new_url = LazyUrl(original_url=long_url, short_url=short_url)
         db.session.add(new_url)
         db.session.commit()
-    else:
-        print("else post")
     return render_template("index.html")
 
 @lazy_index.route("/<short>", methods=['GET'])
