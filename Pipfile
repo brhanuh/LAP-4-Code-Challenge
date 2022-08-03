@@ -12,6 +12,7 @@ werkzeug = "*"
 requests = "*"
 gunicorn = "*"
 psycopg2 = "*"
+postgres = "*"
 
 [dev-packages]
 
