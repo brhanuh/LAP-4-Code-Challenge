@@ -10,6 +10,23 @@ api_key = environ.get('SECRET_API_KEY')
 
 def api_shorten(long_url):
 
+    url = "https://api.short.io/links"
+
+    payload = {
+        "allowDuplicates": False,
+        "originalURL": long_url,
+        "domain": "lazyurl.com"
+    }
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": api_key
+    }
+
+    response = requests.post(url, json=payload, headers=headers)
+
+    print(response.text)
+
     # url = f"https://api.short.io/domains/"
     # payload = json.dumps({"hideReferer":False,"httpsLinks":False,"hostname":"lazyurl.com","linkType":"random"})
     # headers = {
@@ -21,21 +38,21 @@ def api_shorten(long_url):
     # response = requests.request("POST", url, data=payload, headers=headers)
 
     # print(response.text)
-    print("Long url", long_url)
-    res = requests.post('https://api.short.io/links', {
-        'domain': 'lazyurl.com',
-        'originalURL': 'www.google.com',
-    }, headers = {
-        'authorization': 'sk_E4vkZyGkYUzNHxe5',
-        'content-type': 'application/json'
-    }, json=True)
+    # print("Long url", long_url)
+    # res = requests.post('"https://api.short.io/api/links?domain_id=489927&limit=30"', {
+    #     'domain': 'lazyurl.com',
+    #     'originalURL': 'https://github.com/getfutureproof/fp_guides_wiki/wiki',
+    # }, headers = {
+    #     'authorization': 'sk_E4vkZyGkYUzNHxe5',
+    #     'content-type': 'application/json'
+    # }, json=True)
 
-    print(res)
+    # print(res)
 
-    res.raise_for_status()
-    data = res.json()
+    # res.raise_for_status()
+    # data = res.json()
 
-    print(data)
+    # print(data)
 
 
 
