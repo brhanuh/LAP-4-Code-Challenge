@@ -25,9 +25,11 @@ def api_shorten(long_url):
 
     response = requests.post(url, json=payload, headers=headers)
 
-    print(response.text)
+    result = response.json()
 
-    # url = f"https://api.short.io/domains/"
+    return result['path']
+
+    # url = f"https://api.short.io/domains/"    
     # payload = json.dumps({"hideReferer":False,"httpsLinks":False,"hostname":"lazyurl.com","linkType":"random"})
     # headers = {
     #     'accept': "application/json",
