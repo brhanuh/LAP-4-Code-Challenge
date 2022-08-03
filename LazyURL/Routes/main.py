@@ -13,9 +13,10 @@ def welcome():
         new_url = LazyUrl(original_url=long_url, short_url=short_url)
         db.session.add(new_url)
         db.session.commit()
-        short = f"https://fp-lazyurl.herokuapp.com/{short_url}"
+        short = f"https://fp-lazyurl.herokuapp.com/{short_url}/"
         return render_template("index.html", short_url= short)
-    return render_template("index.html")
+    else:
+        return render_template("index.html")
 
 @lazy_index.route("/<short>", methods=['GET'])
 def handle_url(short):
